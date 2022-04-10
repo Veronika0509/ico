@@ -14,6 +14,7 @@ a {
 .container, .container-btn {
     padding-left: 42px;
     padding-right: 42px;
+    padding-top: 50px;
     margin: 0 auto;
 }
 .container-btn {
@@ -27,13 +28,11 @@ h1,h2,h3,h4,h5,h6,p,a {
     padding: 0;
     text-transform: uppercase;
 }
-
 .lang-container {
     display: flex;
     width: 72px;
     justify-content: space-between;
     margin-left: auto;
-    padding-top: 46px;
 }
 .lang-item {
     font-weight: 400;
@@ -44,7 +43,6 @@ h1,h2,h3,h4,h5,h6,p,a {
 .lang-active {
     font-weight: 700;
 }
-
 .button {
     background: #3D92D0;
     color: #fff;
@@ -55,4 +53,65 @@ h1,h2,h3,h4,h5,h6,p,a {
     font-weight: 700;
     font-size: 24px;
     line-height: 29px;
+}
+
+.address {
+    text-transform: none;
+    font-size: 24px;
+    width: 331px;
+    margin-left: auto;
+}
+.address-value {
+    font-weight: 700;
+}
+.content {
+    width: 463px;
+    margin: 0 auto;
+    position: relative;
+    height: 55vh;
+}
+.content-container {
+    position: absolute;
+    top: 50%;
+    margin-top: -0.625em;
+}
+.locked, .unlocked {
+    text-transform: capitalize;
+    font-size: 24px;
+    text-align: center;
+}
+.locked-value, .unlocked-value {
+    font-weight: 700;
+}
+.unlocked {
+    margin-top: 36px;
+}
+.content-button {
+    background: #3D92D0;
+    color: #fff;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: 700;
+    width: 463px;
+    margin-top: 57px;
+}
+.visitor-language {
+    width: 72px;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin-bottom: 29px;
+    margin-right: 69px;
+}
+.visit-lang {
+    font-size: 24px;
+    color: #000;
+}
+.visit-lang-en {
+    font-weight: 700;
 }

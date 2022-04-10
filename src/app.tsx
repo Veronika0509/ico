@@ -1,6 +1,9 @@
 import React from "react";
 import {Language} from "./components/start-page";
 import {Button} from "./components/start-page";
+import {Address} from "./components/wallet-connected";
+import {Content} from "./components/wallet-connected";
+import {LanguageVisitor} from "./components/wallet-connected";
 
 export const App: React.FC = () => {
     const [language, setLanguage] = React.useState(navigator.language === 'ru' ? 'ru' : 'en')
@@ -10,9 +13,8 @@ export const App: React.FC = () => {
 
     const buttonClickHandle = () => {
         // todo
-        console.log('clicked')
         setWalletConnected(true)
-        setAdmin(true)
+        setAdmin(false)
     }
 
     return (
@@ -29,7 +31,11 @@ export const App: React.FC = () => {
             )}
 
             { walletConnected && !admin && (
-                'visitor'
+                <div>
+                    <Address  language={language} />
+                    <Content  language={language} />
+                    <LanguageVisitor language={language} setLanguage={setLanguage} />
+                </div>
             )}
         </>
     )
