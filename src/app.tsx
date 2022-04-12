@@ -16,18 +16,27 @@ export const App: React.FC = () => {
     const [language, setLanguage] = React.useState(navigator.language === 'ru' ? 'ru' : 'en')
 
     const [walletConnected, setWalletConnected] = React.useState(false)
+    const [walletConnecting, setWalletConnecting] = React.useState(false)
     const [admin, setAdmin] = React.useState(true)
 
     const buttonClickHandle = () => {
+        setWalletConnecting(true)
         setTimeout(function () {
+            setWalletConnecting(false)
             setWalletConnected(true)
-        }, 10)
-        setAdmin(true)
+            setAdmin(false)
+        }, 3000)
     }
 
     return (
         <>
-            { walletConnected || (
+            { walletConnecting && (
+                <div>
+                    <Language language={language} setLanguage={setLanguage} />
+                    Connecting...
+                </div>
+            )}
+            { !walletConnected && !walletConnecting && (
                 <div>
                     <Language language={language} setLanguage={setLanguage} />
                     <Button language={language} buttonClickHandle={buttonClickHandle}/>
