@@ -70,8 +70,3 @@ export function Amount({language}) {
         <p className={'amount'}>{language === 'ru' ? 'кол-во фета токенов' : 'pheta tokens amount'}: <span>10000</span></p>
     </div>
 }
-export function AdminButton({language}) {
-    return <div className={'container-admin-content'}>
-        <a href="#" className="admin-btn">{language === 'ru' ? 'регистр' : 'register'}</a>
-    </div>
-}
