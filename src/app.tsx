@@ -1,9 +1,16 @@
 import React from "react";
-import {Language} from "./components/start-page";
-import {Button} from "./components/start-page";
-import {Address} from "./components/wallet-connected";
-import {Content} from "./components/wallet-connected";
-import {LanguageVisitor} from "./components/wallet-connected";
+import {Preloader} from "./components/pages/start-page";
+import {Language} from "./components/pages/start-page";
+import {Button} from "./components/pages/start-page";
+import {Address} from "./components/pages/investor";
+import {Content} from "./components/pages/investor";
+import {LanguageVisitor} from "./components/pages/investor";
+import {ButtonMore} from "./components/pages/investor";
+import {AdminTable} from "./components/pages/admin";
+import {Title} from "./components/pages/admin";
+import {AdminContent} from "./components/pages/admin";
+import {Amount} from "./components/pages/admin";
+import {AdminButton} from "./components/pages/admin";
 
 export const App: React.FC = () => {
     const [language, setLanguage] = React.useState(navigator.language === 'ru' ? 'ru' : 'en')
@@ -12,9 +19,10 @@ export const App: React.FC = () => {
     const [admin, setAdmin] = React.useState(true)
 
     const buttonClickHandle = () => {
-        // todo
-        setWalletConnected(true)
-        setAdmin(false)
+        setTimeout(function () {
+            setWalletConnected(true)
+        }, 10)
+        setAdmin(true)
     }
 
     return (
@@ -25,15 +33,20 @@ export const App: React.FC = () => {
                     <Button language={language} buttonClickHandle={buttonClickHandle}/>
                 </div>
             )}
-
             { walletConnected && admin && (
-                'admin'
+               <div>
+                   <AdminTable language={language}/>
+                   <Title language={language} />
+                   <AdminContent language={language} />
+                   <Amount language={language} />
+                   <AdminButton language={language} />
+               </div>
             )}
-
             { walletConnected && !admin && (
                 <div>
                     <Address  language={language} />
                     <Content  language={language} />
+                    <ButtonMore language={language} />
                     <LanguageVisitor language={language} setLanguage={setLanguage} />
                 </div>
             )}

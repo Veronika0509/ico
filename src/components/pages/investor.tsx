@@ -1,5 +1,5 @@
 import React from 'react'
-import './main.css'
+import '../main.css'
 
 export function Address({language}) {
     return <div className={'container'}>
@@ -15,6 +15,16 @@ export function Content({language}) {
             <a href="#" className={'content-button'}>{language === 'ru' ? 'получить 10 токенов' : 'get 10 tokens'}</a>
         </div>
     </div>
+}
+
+export function ButtonMore({language}) {
+    return (
+        <div className={'container'}>
+            <div className="button-more-container">
+                <a href="#" className="button-more">{language === 'ru' ? 'купить больше' : 'buy more'}</a>
+            </div>
+        </div>
+    )
 }
 
 export function LanguageVisitor({language, setLanguage}) {
