@@ -1,7 +1,5 @@
 import React from 'react'
 import '../main.css'
-import {PurseAddress} from "./investor";
-import {Language} from "./start-page";
 
 export function InvestorPurchaseEnable({language}) {
     return (
@@ -22,6 +20,6 @@ export function InvestorPurchaseEnable({language}) {
     )
 }
 
-// <PurseAddress language={language} />
+// <WalletAddress language={language} />
 // <InvestorPurchaseEnable language={language} />
 // <Language language={language} setLanguage={setLanguage} />

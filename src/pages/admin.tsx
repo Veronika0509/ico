@@ -1,7 +1,7 @@
 import React from 'react'
 import '../main.css'
-import {BlockchainService} from "../../blockchain-service";
-import {Phase} from "../../utils";
+import {BlockchainService} from "../blockchain-service";
+import {Phase} from "../utils";
 
 export function TableWithdrawal() {
     return (
