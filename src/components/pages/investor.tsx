@@ -1,13 +1,17 @@
 import React from 'react'
 import '../main.css'
 
+export function PurseAddress({language}) {
+    return (
+        <div className={'container-address'}>
+            <p className={'address'}>{language === 'ru' ? 'Ваш адрес: ' : 'Your address: '}<span className={'address-value'}>0xjfn4...65hfg</span></p>
+        </div>
+    )
+}
 
 export function InvestorPage({language}) {
     return (
-        <div>
-            <div className={'container'}>
-                <p className={'address'}>{language === 'ru' ? 'Ваш адрес: ' : 'Your address: '}<span className={'address-value'}>0xjfn4...65hfg</span></p>
-            </div>
+        <div className={'container'}>
             <div className={'content'}>
                 <div className={'content-container'}>
                     <p className={'locked'}>{language === 'ru' ? 'токены фета заблокированы: ' : 'pheta tokens locked:'}<span className={'locked-value'}>990</span></p>

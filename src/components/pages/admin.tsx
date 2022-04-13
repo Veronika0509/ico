@@ -51,14 +51,14 @@ export function AdminPage() {
                         </select>
                     </div>
                     <div>
-                        <p className={'select-one-available'}>available:<span className={'available-span'}>100000</span>pheta tokens</p>
+                        <p className={'select-one-available'}>available:<span className={'available-span'}> 100000 </span>pheta tokens</p>
                         <p className={'select-one-course'}>1 USD = 0.11 PHETA</p>
                     </div>
                 </div>
                 <div className="select-two-container">
                     <form action="#" className={'form'}>
                         <input type="text" className={'address-input'} placeholder={'Address'} required/>
-                        <input type="number" className={'amount-input'} placeholder={'Amount'} required/>
+                        <input type="number" className={'amount-input amount-input-first'} placeholder={'Amount'} required/>
                         <div className="select-two">
                             <select>
                                 <option>usd</option>
