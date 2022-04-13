@@ -27,6 +27,8 @@ export function ButtonMore({language}) {
     )
 }
 
+// fixme: ты создала отдельный компонент только для стилей? Думаю лучше использовать отид и тот же компонент изменения
+//  языка везде, а стили сделать с учётом радительского блока
 export function LanguageVisitor({language, setLanguage}) {
     return <div className={'container'}>
         <div className="visitor-language">
