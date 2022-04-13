@@ -1,16 +1,13 @@
 import React from "react";
 import {Preloader} from "./components/pages/start-page";
 import {Language} from "./components/pages/start-page";
-import {Button} from "./components/pages/start-page";
-import {Address} from "./components/pages/investor";
-import {Content} from "./components/pages/investor";
-import {LanguageVisitor} from "./components/pages/investor";
-import {ButtonMore} from "./components/pages/investor";
-import {AdminTable} from "./components/pages/admin";
-import {Title} from "./components/pages/admin";
-import {AdminContent} from "./components/pages/admin";
-import {Amount} from "./components/pages/admin";
-import {AdminButton} from "./components/pages/admin";
+import {PurseAddress} from "./components/pages/investor";
+import {ConnectWalletButton} from "./components/pages/start-page";
+import {InvestorPage} from "./components/pages/investor";
+import {InvestorPurchaseFinish} from "./components/pages/investor-purchase-finish";
+import {TableWithdrawal} from "./components/pages/admin";
+import {AdminPage} from "./components/pages/admin";
+import {InvestorPurchaseEnable} from "./components/pages/investor-purchase-enable";
 import {BlockchainService} from "./blockchain-service";
 import {Phase} from "./utils";
 
@@ -21,7 +18,7 @@ export const App: React.FC = () => {
     const [walletConnecting, setWalletConnecting] = React.useState(false)
     const [admin, setAdmin] = React.useState(true)
 
-    const buttonClickHandle = () => {
+    const connectWallet = () => {
         setWalletConnecting(true)
         BlockchainService.connectWallet().then( address => {
             setWalletConnecting(false)
@@ -35,43 +32,26 @@ export const App: React.FC = () => {
         <>
             { walletConnecting && (
                 <div>
-                    <Language language={language} setLanguage={setLanguage} />
-                    Connecting...
+                    <Preloader language={language}/>
                 </div>
             )}
             { !walletConnected && !walletConnecting && (
                 <div>
                     <Language language={language} setLanguage={setLanguage} />
-                    <Button language={language} buttonClickHandle={buttonClickHandle}/>
+                    <ConnectWalletButton language={language} onClick={connectWallet}/>
                 </div>
             )}
             { walletConnected && admin && (
-                // fixme: я бы сделал отдельные компоненты для Амина и Инвестора, так как нам прийдёться добавить не
-                //  мало логики в каждый из комплонентов, и эта логика будет разная, почти не будет общих методов
-               <div>
-                   <AdminTable language={language}/>
-                   <Title language={language} />
-                   <AdminContent language={language} />
-
-                   // я бы не делал здесь отдельного компонента, так как нам понадобиться передавать сюда значение, будем много дополнительного кода
-                   <Amount language={language} />
-                   // вот например  так
-                   {/*<AdminButton language={language} />*/}
-                   <div className={'container-admin-content'}>
-                       <a href="#" className="admin-btn"
-                          onClick={() => BlockchainService.registerPurchase(Phase.SEED, '', 1)}>
-                           {language === 'ru' ? 'зарегистрировать' : 'register'}
-                       </a>
-                   </div>
-               </div>
+                <div>
+                    <TableWithdrawal />
+                    <AdminPage />
+                </div>
             )}
             { walletConnected && !admin && (
-                // тоже стоит вынести в отдельный компонент
                 <div>
-                    <Address  language={language} />
-                    <Content  language={language} />
-                    <ButtonMore language={language} />
-                    <LanguageVisitor language={language} setLanguage={setLanguage} />
+                    <PurseAddress language={language}/>
+                    <InvestorPage language={language}/>
+                    <Language language={language} setLanguage={setLanguage} />
                 </div>
             )}
         </>

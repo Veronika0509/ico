@@ -39,6 +39,7 @@ h1,h2,h3,h4,h5,h6,p,a {
     width: 72px;
     justify-content: space-between;
     margin-left: auto;
+    padding-bottom: 30px;
 }
 .lang-item {
     font-weight: 400;
@@ -64,7 +65,7 @@ h1,h2,h3,h4,h5,h6,p,a {
     background: #CACACA;
     color: #000;
     max-width: 463px;
-    margin: 57px auto 0 auto;
+    margin: -30px auto 0 auto;
     padding: 20px 120px;
     text-align: center;
     font-weight: 700;
@@ -88,7 +89,7 @@ h1,h2,h3,h4,h5,h6,p,a {
 }
 .content-container {
     position: absolute;
-    top: 50%;
+    top: 35%;
     margin-top: -0.625em;
 }
 .locked, .unlocked {
@@ -287,9 +288,11 @@ h1,h2,h3,h4,h5,h6,p,a {
     outline: none;
     border: 1px solid #3d93d0;
 }
-.amount-input {
+.amount-input-first {
     margin-left: 27px;
     margin-right: 21px;
+}
+.amount-input {
     max-width: 146px;
     text-align: center;
     padding: 20px 24px;
@@ -350,4 +353,71 @@ h1,h2,h3,h4,h5,h6,p,a {
     text-align: center;
     max-width: 463px;
     margin-bottom: 150px;
+}
+.container-address {
+    padding-top: 50px;
+    padding-right: 69px;
+}
+
+.container-investor {
+    padding-left: 70px;
+    padding-right: 70px;
+}
+.container-investor-inside {
+    max-width: 463px;
+    margin: 120px auto 0 auto;
+}
+.enab-inves-title {
+    margin-left: 74px;
+    text-transform: capitalize;
+    font-size: 24px;
+}
+.enab-inves-available {
+    margin-top: 77px;
+    margin-bottom: 13px;
+    font-size: 24px;
+    text-transform: capitalize;
+}
+.enab-inves-available-span, .amount-value-first-item-span {
+    font-weight: 700;
+}
+.amount-container {
+    display: flex;
+    align-items: center;
+}
+.amount-input-second {
+    padding: 20px 127px 21px 39px;
+    border: 1px solid #3D92D0;
+}
+.amount-value {
+    margin-left: 45px;
+}
+.amount-value-first-item {
+    margin-bottom: 17px;
+    text-transform: uppercase;
+    font-size: 24px;
+}
+.amount-input-second::-webkit-input-placeholder {
+    color: #939393;
+}
+.address-input-second:focus{
+    border-radius: 0;
+    outline: none;
+    border: 1px solid #3d93d0;
+}
+.amount-input-second {
+    max-width: 261px;
+    text-align: center;
+    padding: 20px 124px 21px 39px;
+    font-size: 24px;
+    border: 1px solid #3d93d0;
+}
+.enab-inves-btn {
+    background: #3D92D0;
+    padding: 20px 160px;
+    text-align: center;
+    color: #fff;
+    width: 463px;
+    margin: 35px auto 120px auto;
+    font-weight: 700;
 }
