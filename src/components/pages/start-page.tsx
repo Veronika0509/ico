@@ -26,9 +26,9 @@ export function Language({language, setLanguage}) {
     )
 }
 
-export function Button({language, buttonClickHandle}) {
+export function ConnectWalletButton({language, onClick}) {
     function all() {
-        buttonClickHandle()
+        onClick()
     }
     return <div className={'container-btn'}>
         <a href="#" onClick={all} className={'button'}>{language === 'ru' ? 'подключить кошелек' : 'connect wallet'}</a>
