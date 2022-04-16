@@ -1,17 +1,15 @@
 import React from "react";
 import {Preloader} from "./pages/start-page";
-import {Language} from "./pages/start-page";
-import {ConnectWalletButton} from "./pages/start-page";
-import {InvestorPage} from "./pages/investor";
-import {TableWithdrawal} from "./pages/admin";
-import {AdminPage} from "./pages/admin";
 import {BlockchainService} from "./blockchain-service";
-import {Phase} from "./utils";
-import {WalletAddress} from "./components/walletAddress";
+// import {Phase} from "./utils";
+import {Confirm} from "./pages/confirm";
+import {InvestorPage} from "./pages/investor";
+import {AdminPage} from "./pages/admin";
+import {WalletConnect} from "./pages/start-page";
 
 
 export const App: React.FC = () => {
-    const [language, setLanguage] = React.useState(navigator.language === 'ru' ? 'ru' : 'en')
+    const [language, setLanguage] = React.useState(navigator.language)
 
     const [walletConnected, setWalletConnected] = React.useState(false)
     const [walletConnecting, setWalletConnecting] = React.useState(false)
@@ -36,21 +34,17 @@ export const App: React.FC = () => {
             )}
             { !walletConnected && !walletConnecting && (
                 <div>
-                    <Language language={language} setLanguage={setLanguage} />
-                    <ConnectWalletButton language={language} onClick={connectWallet}/>
+                    <WalletConnect language={language} connectWallet={connectWallet}/>
                 </div>
             )}
             { walletConnected && admin && (
                 <div>
-                    <TableWithdrawal />
-                    <AdminPage />
+                    <AdminPage/>
                 </div>
             )}
             { walletConnected && !admin && (
                 <div>
-                    <WalletAddress language={language}/>
                     <InvestorPage language={language}/>
-                    <Language language={language} setLanguage={setLanguage} />
                 </div>
             )}
         </>

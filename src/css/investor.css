@@ -1,0 +1,117 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Gilroy', sans-serif;
+}
+* {
+    box-sizing: border-box;
+}
+h1,h2,h3,h4,h5,h6,p,li {
+    margin: 0;
+    padding: 0;
+    color: #151B4C;
+}
+ul,li {
+    display: block;
+    padding: 0;
+    margin: 0;
+}
+img {
+    display: block;
+    max-width: 100%;
+    object-fit: cover;
+}
+span {
+    font-weight: 700;
+}
+a {
+    text-decoration: none;
+    cursor: pointer;
+    color: #151B4C;
+}
+.ip {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    padding: 166px 320px 269px 320px;
+}
+.ip-content {
+    width: 800px;
+    border-radius: 20px;
+    backdrop-filter: blur(40px);
+}
+.ip-content-container {
+    background: rgba(255, 255, 255, 0.4);
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    border: 2px solid #51F3A4;
+    padding: 36px 265px 54px 265px;
+    text-align: center;
+}
+
+.ip-address {
+    font-size: 14px;
+    font-family: 'Inter', sans-serif;
+}
+.ip-info {
+    margin-top: 85px;
+}
+.ip-info-title-one {
+    font-size: 24px;
+    text-transform: capitalize;
+}
+.ip-info-value-one {
+    font-size: 40px;
+    font-weight: 700;
+    margin-top: 8px;
+    margin-bottom: 21px;
+}
+.ip-info-title-two {
+    font-size: 24px;
+    text-transform: capitalize;
+}
+.ip-info-value-two {
+    font-size: 40px;
+    font-weight: 700;
+    margin-top: 8px;
+}
+.ip-btns {
+    margin-top: 72px;
+}
+.ip-btn-one {
+    margin-bottom: 24px;
+    display: block;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 700;
+    background: #51F3A4;
+    padding: 18px 50px;
+    text-align: center;
+    transition: .4s;
+    border: 1px solid transparent;
+    border-right: 30px;
+    color: #fff;
+    border-radius: 30px;
+}
+.ip-btn-one:hover {
+    border: 1px solid #51F3A4;
+    background: none;
+    color: #24c778;
+}
+.ip-btn-two {
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 700;
+    color: #151B4C;
+    padding: 18px 50px;
+    text-align: center;
+    display: block;
+    transition: .4s;
+    border: 2px solid #151B4C;
+    border-radius: 30px;
+}
+.ip-btn-two:hover {
+    background: #151B4C;
+    color: #fff;
+}
