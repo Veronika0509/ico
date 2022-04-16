@@ -52,7 +52,7 @@ a {
     height: 100%;
     border-radius: 20px;
     border: 2px solid #51F3A4;
-    padding: 31px 180px 52px 181px;
+    padding: 31px 0 52px 0;
     text-align: center;
 }
 .c-back {
@@ -95,6 +95,8 @@ a {
     margin-bottom: 8px;
     text-align: left;
     font-family: 'Inter', sans-serif;
+    margin-left: 181px;
+    display: block;
 }
 .c-buy-form-amount-input {
     font-size: 16px;
@@ -146,4 +148,70 @@ input::-webkit-input-placeholder {
     color: #fff;
     border-radius: 30px;
     font-weight: 700;
+}
+
+/*   Responsive   */
+
+@media screen and (max-width: 890px){
+    .c-content {
+        width: 700px;
+    }
+    .c-buy-form-amount-desc {
+        margin-left: 129px;
+    }
+}
+@media screen and (max-width: 787px){
+    .c-content {
+        width: 530px;
+    }
+    .c-buy-form-amount-desc {
+        margin-left: 44px;
+    }
+    .c {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+@media screen and (max-width: 600px){
+    .c-content {
+        width: 390px;
+    }
+    .c-address {
+        margin-top: 0;
+    }
+    .c-buy-form-amount-desc, .c-buy-form-amount-input, .c-buy-form-texts {
+        margin-left: 16px;
+    }
+    .c-buy-form {
+        display: block;
+    }
+    .c-buy-form-texts {
+        margin-top: 41px;
+    }
+    .c-buy-form-texts-two {
+        text-align: left;
+    }
+    .c-btn {
+        margin-top: 43px;
+    }
+}
+@media screen and (max-width: 490px){
+    .c-content {
+        width: 300px;
+    }
+    .c-buy-form-amount-input {
+        max-width: 273px;
+    }
+    .c-buy-form-amount, .c-buy-form-texts, .c-buy-form {
+        max-width: 273px;
+    }
+    .c-buy-form-amount-input {
+        margin-left: 6px;
+    }
+}
+@media screen and (max-width: 340px){
+    .c {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
 }

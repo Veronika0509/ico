@@ -21,7 +21,8 @@ export const App: React.FC = () => {
             setWalletConnecting(false)
             setWalletConnected(true)
 
-            setAdmin(BlockchainService.isAdmin(address))
+            // setAdmin(BlockchainService.isAdmin(address))
+            setAdmin(false)
         })
     }
 
@@ -34,7 +35,8 @@ export const App: React.FC = () => {
             )}
             { !walletConnected && !walletConnecting && (
                 <div>
-                    <WalletConnect language={language} connectWallet={connectWallet}/>
+                    <AdminPage />
+                    {/*<WalletConnect language={language} connectWallet={connectWallet}/>*/}
                 </div>
             )}
             { walletConnected && admin && (

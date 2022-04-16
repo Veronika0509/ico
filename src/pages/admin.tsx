@@ -38,6 +38,66 @@ export function AdminPage() {
                             <a href="#" className={'ap-table-line-link'}>withdrow</a>
                         </div>
                     </div>
+                    <div className={'ap-table-mobile'}>
+                        <div className={'ap-tab-line-one'}>
+                            <h3 className={'ap-tab-mob-line-one-title'}>seed round</h3>
+                            <a href="#" onClick={() => {document.querySelector('.ap-tab-info-one').classList.toggle('active')}} className={'ap-tab-mob-line-one-link'}>information</a>
+                            <a href="#" className={'ap-tab-mob-line-link'}>withdrow</a>
+                        </div>
+                        <div className={'ap-tab-info-one-container'}>
+                            <div className={'ap-tab-info-one'}>
+                                <div className={'ap-tab-info-container'}>
+                                    <p className="ap-tab-info-text">Supply</p>
+                                    <p className={'ap-tab-info-value'}>100000</p>
+                                </div>
+                                <div className={'ap-tab-info-container'}>
+                                    <p className="ap-tab-info-text">Invested</p>
+                                    <p className={'ap-tab-info-value'}>45678</p>
+                                </div>
+                                <div className={'ap-tab-info-container'}>
+                                    <p className="ap-tab-info-text">Unlocked</p>
+                                    <p className={'ap-tab-info-value'}>1234</p>
+                                </div>
+                                <div className={'ap-tab-info-container'}>
+                                    <p className="ap-tab-info-text">Released</p>
+                                    <p className={'ap-tab-info-value'}>1234</p>
+                                </div>
+                                <div className={'ap-tab-info-container'}>
+                                    <p className="ap-tab-info-text">Left</p>
+                                    <p className={'ap-tab-info-value'}>1234</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div className={'ap-tab-line-one ap-tab-line-two'}>
+                            <h3 className={'ap-tab-mob-line-one-title'}>private round</h3>
+                            <a href="#" onClick={() => {document.querySelector('.ap-tab-info-two').classList.toggle('active')}} className={'ap-tab-mob-line-one-link ap-tab-mob-line-two-link'}>information</a>
+                            <a href="#" className={'ap-tab-mob-line-link'}>withdrow</a>
+                        </div>
+                        <div className={'ap-tab-info-two-container'}>
+                            <div className={'ap-tab-info-two'}>
+                                <div className={'ap-tab-info-container'}>
+                                    <p className="ap-tab-info-text">Supply</p>
+                                    <p className={'ap-tab-info-value'}>100000</p>
+                                </div>
+                                <div className={'ap-tab-info-container'}>
+                                    <p className="ap-tab-info-text">Invested</p>
+                                    <p className={'ap-tab-info-value'}>45678</p>
+                                </div>
+                                <div className={'ap-tab-info-container'}>
+                                    <p className="ap-tab-info-text">Unlocked</p>
+                                    <p className={'ap-tab-info-value'}>1234</p>
+                                </div>
+                                <div className={'ap-tab-info-container'}>
+                                    <p className="ap-tab-info-text">Released</p>
+                                    <p className={'ap-tab-info-value'}>1234</p>
+                                </div>
+                                <div className={'ap-tab-info-container'}>
+                                    <p className="ap-tab-info-text">Left</p>
+                                    <p className={'ap-tab-info-value'}>1234</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <div className={'ap-form'}>
                         <h2 className={'ap-form-title'}>Register New investment</h2>
                         <div className={'inputs-one'}>

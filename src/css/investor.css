@@ -33,12 +33,13 @@ a {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
-    padding: 166px 320px 269px 320px;
+    padding: 166px 0 269px 0;
 }
 .ip-content {
     width: 800px;
     border-radius: 20px;
     backdrop-filter: blur(40px);
+    margin: 0 auto;
 }
 .ip-content-container {
     background: rgba(255, 255, 255, 0.4);
@@ -46,7 +47,8 @@ a {
     height: 100%;
     border-radius: 20px;
     border: 2px solid #51F3A4;
-    padding: 36px 265px 54px 265px;
+    padding-top: 36px;
+    padding-bottom: 54px;
     text-align: center;
 }
 
@@ -60,12 +62,14 @@ a {
 .ip-info-title-one {
     font-size: 24px;
     text-transform: capitalize;
+    opacity: .5;
 }
 .ip-info-value-one {
     font-size: 40px;
     font-weight: 700;
     margin-top: 8px;
     margin-bottom: 21px;
+    opacity: .5;
 }
 .ip-info-title-two {
     font-size: 24px;
@@ -86,13 +90,16 @@ a {
     font-size: 16px;
     font-weight: 700;
     background: #51F3A4;
-    padding: 18px 50px;
+    padding: 18px 44px;
     text-align: center;
     transition: .4s;
     border: 1px solid transparent;
     border-right: 30px;
     color: #fff;
     border-radius: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 272px;
 }
 .ip-btn-one:hover {
     border: 1px solid #51F3A4;
@@ -110,8 +117,41 @@ a {
     transition: .4s;
     border: 2px solid #151B4C;
     border-radius: 30px;
+    width: 272px;
+    margin: 0 auto;
 }
 .ip-btn-two:hover {
     background: #151B4C;
     color: #fff;
+}
+
+/*   Responsive   */
+
+@media screen and (max-width: 840px) {
+    .ip-content {
+        width: 750px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .ip-content {
+        width: 650px;
+    }
+}
+@media screen and (max-width: 676px) {
+    .ip-content {
+        width: 550px;
+    }
+}
+@media screen and (max-width: 575px) {
+    .ip-content {
+        width: 400px;
+    }
+    .ip-info-title-one, .ip-info-title-two {
+        font-size: 22px;
+    }
+}
+@media screen and (max-width: 420px) {
+    .ip-content {
+        width: 320px;
+    }
 }

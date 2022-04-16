@@ -18,7 +18,7 @@ export function Confirm({language}) {
                         <h2 className={'c-buy-title'}>{language === 'ru' ? 'купить фета токены' : 'buy pheta tokens'}</h2>
                         <p className={'c-buy-form-amount-desc'}>{language === 'ru' ? 'Имеется' : 'Available'}: <span>100</span> BUSD</p>
                         <div className={'c-buy-form'}>
-                            <div>
+                            <div className={'c-buy-form-amount'}>
                                 <input className={'c-buy-form-amount-input'} type="number" placeholder={language === 'ru' ? 'Кол-во' : 'Amount'} required/>
                             </div>
                             <div className="c-buy-form-texts">

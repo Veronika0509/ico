@@ -124,6 +124,104 @@ a {
     background: #151B4C;
     color: #fff;
 }
+.ap-table-mobile {
+    padding-bottom: 43px;
+    border-bottom: 2px solid #55FBAC;
+    padding-top: 40px;
+    padding-left: 16px;
+}
+.ap-tab-line-one {
+    width: 600px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+.ap-tab-mob-line-one-title {
+    text-transform: capitalize;
+    font-size: 20px;
+    font-weight: 500;
+}
+.ap-tab-mob-line-one-link {
+    font-size: 18px;
+    text-decoration: underline #151B4C;
+    color: #151B4C;
+}
+.ap-tab-info-one.active {
+    display: block;
+}
+.ap-tab-info-two.active {
+    display: block;
+}
+.ap-tab-mob-line-link {
+    font-size: 15px;
+    padding: 4px 11px;
+    border: 1px solid #151B4C;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-weight: 500;
+    margin-right: 5px;
+}
+.ap-tab-line-two {
+    margin-top: 20px;
+}
+.ap-tab-info-one-container {
+    backdrop-filter: blur(40px);
+    position: absolute;
+    border-radius: 12px;
+    border: 1px solid #51F3A4;
+    top: 63px;
+    left: 43%;
+    z-index: 90;
+}
+.ap-tab-info-two-container {
+    backdrop-filter: blur(40px);
+    position: absolute;
+    border-radius: 12px;
+    border: 1px solid #51F3A4;
+    top: 113px;
+    left: 46.5%;
+    z-index: 90;
+}
+.ap-tab-mob-line-two-link {
+    margin-left: -12px;
+}
+.ap-tab-info-one {
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 12px;
+    padding: 14px 17px 19px 13px;
+    display: none;
+}
+.ap-tab-info-two {
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 12px;
+    padding: 14px 17px 19px 13px;
+    display: none;
+}
+.ap-tab-info-container:not(:last-of-type) {
+    margin-bottom: 25px;
+}
+.ap-tab-info-container {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    width: 150px;
+}
+.ap-tab-info-value {
+    font-size: 18px;
+    color: #151B4C;
+    margin-left: 10px;
+}
+.ap-tab-info-text {
+    color: rgba(21, 27, 76, .8);
+    font-size: 20px;
+    font-weight: 500;
+}
+
 .ap-form {
     padding: 23px 47px 36px 30px;
 }
@@ -283,4 +381,92 @@ a {
     border: 1px solid #51F3A4;
     background: none;
     color: #24c778;
+}
+.ap-table-mobile {
+    display: none;
+}
+
+/*   Responsive   */
+
+@media screen and (max-width: 828px) {
+    .ap-content {
+        width: 650px;
+    }
+    .ap-table {
+        display: none;
+    }
+    .ap-table-mobile {
+        display: block;
+    }
+    .form-two {
+        flex-wrap: wrap;
+        width: 100%;
+    }
+    .form-two-input-two-input {
+        width: 435px;
+    }
+    .form-two-input-three {
+        margin-right: 150px;
+    }
+}
+@media screen and (max-width: 680px) {
+    .ap-content {
+        width: 500px;
+    }
+    .ap-tab-line-one, .ap-tab-line-two {
+        width: 470px;
+    }
+    .select-one-texts-one {
+        min-width: 150px;
+    }
+}
+@media screen and (max-width: 528px) {
+    .ap-content {
+        width: 350px;
+    }
+    .ap-tab-line-one, .ap-tab-line-two {
+        width: 320px;
+    }
+    .ap-tab-mob-line-one-title {
+        font-size: 18px;
+    }
+    .ap-tab-mob-line-one-link {
+        font-size: 16px;
+    }
+    .ap-tab-mob-line-link {
+        font-size: 14px;
+    }
+    .input-one {
+        flex-wrap: wrap;
+    }
+    .select-one-texts {
+        margin-left: 0;
+        margin-top: 15px;
+    }
+    .form-two-input-one-input, .form-two-input-two-input {
+        width: 295px;
+    }
+    .form-two-input-one-desc {
+        margin-top: 25px;
+    }
+}
+@media screen and (max-width: 350px) {
+    .ap-content {
+        width: 310px;
+    }
+    .ap-tab-line-one, .ap-tab-line-two {
+        width: 280px;
+    }
+    .ap-tab-mob-line-one-title {
+        font-size: 15px;
+    }
+    .ap-tab-mob-line-one-link {
+        font-size: 13px;
+    }
+    .ap-tab-mob-line-link {
+        font-size: 11px;
+    }
+    .form-two-input-one-input, .form-two-input-two-input, .select-one select {
+        width: 250px;
+    }
 }
