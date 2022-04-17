@@ -6,6 +6,10 @@ import metamaskIcon from '../components/assets/img/metamask-icon.png'
 import coinbaseIcon from '../components/assets/img/coinbase-icon.png'
 import walletConnectIcon from '../components/assets/img/wallet-connect-icon.png'
 import phantomIcon from '../components/assets/img/phantom-icon.png'
+import {UnsupportedChainIdError, useWeb3React} from "@web3-react/core";
+import {UserRejectedRequestError} from "@web3-react/injected-connector";
+import Web3 from "web3";
+import {bscChainId, injected} from "../index";
 
 export function Preloader({language}) {
     return (
@@ -15,10 +19,37 @@ export function Preloader({language}) {
     )
 }
 
-export function WalletConnect({language, connectWallet}) {
-    function all() {
-        connectWallet()
+export function WalletConnect({language, onConnected}) {
+    const { active, account, library, connector, activate, setError, deactivate } = useWeb3React()
+
+    if (active && typeof account === 'string') {
+        onConnected(account)
     }
+
+    const changeNetwork = async () => {
+        if (window['ethereum']) {
+                await window['ethereum'].request({
+                    method: 'wallet_switchEthereumChain',
+                    params: [{ chainId: Web3.utils.toHex(bscChainId) }],
+                })
+        } else {
+            console.error('No ethereum');
+        }
+    }
+
+    const clickHandler = async () => {
+        activate(injected,async (error) => {
+            if (error instanceof UnsupportedChainIdError) {
+                await changeNetwork()
+            }
+            else if (error instanceof UserRejectedRequestError) {
+                // ignore user rejected error
+            } else {
+                setError(error)
+            }
+        }, false)
+    }
+
     return (
         <section className={'wallet-connect'} style={{backgroundImage: `url(${Background})`}}>
             <div className={'container'}>
@@ -26,7 +57,7 @@ export function WalletConnect({language, connectWallet}) {
                     <div className={'w-c-content-container'}>
                         <h2 className={'w-c-content-title'}>{language === 'ru' ? 'Подключить кошелек' : 'Connect your wallet'}</h2>
                         <ul className="w-c-content-list">
-                            <li className="w-c-content-list-item metamask-item" onClick={all}>
+                            <li className="w-c-content-list-item metamask-item" onClick={clickHandler}>
                                 <img className={'w-c-content-list-item-img'} src={metamaskIcon} alt="Metamask icon"/>
                                 <a href="#" className={'w-c-content-list-item-link'}>Metamask</a>
                             </li>
@@ -58,41 +89,3 @@ export function WalletConnect({language, connectWallet}) {
         </section>
     )
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-// export function Language({language, setLanguage}) {
-//     return (
-//         <div className={'container'}>
-//             <div className={'lang-container'}>
-//                 <a href="#"
-//                    style={{fontWeight: language === 'ru' ? 700 : 400}}
-//                    onClick={() => setLanguage('ru')} className={'lang-item'}
-//                 >ru</a>
-//                 <a href="#"
-//                    style={{fontWeight: language === 'ru' ? 400 : 700}}
-//                    onClick={() => setLanguage('en')} className={'lang-item'}
-//                 >en</a>
-//             </div>
-//         </div>
-//     )
-// }
-//
-// export function ConnectWalletButton({language, onClick}) {
-//     function all() {
-//         onClick()
-//     }
-//     return <div className={'container-btn'}>
-//         <a href="#" onClick={all} className={'button'}>{language === 'ru' ? 'подключить кошелек' : 'connect wallet'}</a>
-//     </div>;
-// }

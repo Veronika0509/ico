@@ -1,29 +1,26 @@
 import React from "react";
 import {Preloader} from "./pages/start-page";
-import {BlockchainService} from "./blockchain-service";
-// import {Phase} from "./utils";
-import {Confirm} from "./pages/confirm";
 import {InvestorPage} from "./pages/investor";
 import {AdminPage} from "./pages/admin";
 import {WalletConnect} from "./pages/start-page";
 
+const adminAddress = ''
 
 export const App: React.FC = () => {
     const [language, setLanguage] = React.useState(navigator.language)
 
     const [walletConnected, setWalletConnected] = React.useState(false)
+    const [walletAddress, setWalletAddress] = React.useState('')
     const [walletConnecting, setWalletConnecting] = React.useState(false)
     const [admin, setAdmin] = React.useState(true)
+    // const { active, account, library, connector, activate, setError, deactivate } = useWeb3React()
 
-    const connectWallet = () => {
-        setWalletConnecting(true)
-        BlockchainService.connectWallet().then( address => {
-            setWalletConnecting(false)
-            setWalletConnected(true)
-
-            // setAdmin(BlockchainService.isAdmin(address))
-            setAdmin(false)
-        })
+    const walletConnectedHandler = (address) => {
+        // setWalletConnecting(true)
+        //     setWalletConnecting(false)
+        setWalletConnected(true)
+        setWalletAddress(address)
+        setAdmin(adminAddress === address)
     }
 
     return (
@@ -35,7 +32,7 @@ export const App: React.FC = () => {
             )}
             { !walletConnected && !walletConnecting && (
                 <div>
-                    <WalletConnect language={language} connectWallet={connectWallet}/>
+                    <WalletConnect language={language} onConnected={walletConnectedHandler}/>
                 </div>
             )}
             { walletConnected && admin && (
@@ -45,7 +42,7 @@ export const App: React.FC = () => {
             )}
             { walletConnected && !admin && (
                 <div>
-                    <InvestorPage language={language}/>
+                    <InvestorPage walletAddress={walletAddress} language={language}/>
                 </div>
             )}
         </>
