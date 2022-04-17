@@ -35,8 +35,7 @@ export const App: React.FC = () => {
             )}
             { !walletConnected && !walletConnecting && (
                 <div>
-                    <AdminPage />
-                    {/*<WalletConnect language={language} connectWallet={connectWallet}/>*/}
+                    <WalletConnect language={language} connectWallet={connectWallet}/>
                 </div>
             )}
             { walletConnected && admin && (
